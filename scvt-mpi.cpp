@@ -29,7 +29,7 @@
 #include <inttypes.h>
 #include <iostream>
 #include <fstream>
-#include <tr1/unordered_set>
+#include <boost/tr1/unordered_set.hpp>
 #include <vector>
 #include <math.h>
 #include <assert.h>

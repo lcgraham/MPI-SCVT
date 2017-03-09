@@ -1,10 +1,10 @@
 CC = mpic++
-BDIR = /opt/local/boost_1_48_0-gcc
-NCDFDIR = /opt/local/netcdf-4.1.3-gcc
+BDIR = /usr/local/Cellar/boost/1.62.0
+NCDFDIR = /usr/local/Cellar/netcdf/4.3.3.1_5
 LIBS = -I${BDIR}/include/ -L${BDIR}/lib/ -lboost_mpi -lboost_serialization
 
 ifeq ($(NETCDF),yes)
-NCDFDIR = /opt/local/netcdf-4.1.3-gcc
+NCDFDIR = /usr/local/Cellar/netcdf/4.3.3.1_5
 LIBS += -I$(NCDFDIR)/include/ -L$(NCDFDIR)/lib/ -lnetcdf -lnetcdf_c++
 NCDF_FLAGS = -DUSE_NETCDF
 endif

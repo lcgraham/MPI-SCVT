@@ -351,9 +351,6 @@
 #ifdef CPU86
 #include <float.h>
 #endif /* CPU86 */
-#ifdef LINUX
-#include <fpu_control.h>
-#endif /* LINUX */
 #ifdef TRILIBRARY
 #include "triangle.h"
 #endif /* TRILIBRARY */
@@ -4900,16 +4897,6 @@ void exactinit()
   _control87(_PC_53, _MCW_PC); /* Set FPU control word for double precision. */
 #endif /* not SINGLE */
 #endif /* CPU86 */
-#ifdef LINUX
-#ifdef SINGLE
-  /*  cword = 4223; */
-  cword = 4210;                 /* set FPU control word for single precision */
-#else /* not SINGLE */
-  /*  cword = 4735; */
-  cword = 4722;                 /* set FPU control word for double precision */
-#endif /* not SINGLE */
-  _FPU_SETCW(cword);
-#endif /* LINUX */
 
   every_other = 1;
   half = 0.5;
